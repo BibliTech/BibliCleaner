@@ -1,0 +1,57 @@
+﻿@page
+
+@{
+    this.Layout = "_Layout_Index";
+    var title = this.texts.GetText("Title");
+    this.ViewBag.Title = title;
+    this.ViewBag.Background = "/img/home-background.png";
+
+    var url = "/cleaner";
+}
+
+@section Heads {
+
+    <link async rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
+
+}
+
+@section HeaderContent {
+
+    <h1>@(title)</h1>
+    <h2 class="subtitle">@this.texts.GetText("Subtitle")</h2>
+    <a class="btn btn-default" href="@(url)">
+        @this.texts.GetText("Index_MainButton")
+    </a>
+
+}
+
+<div class="row align-items-center">
+    <div class="col">
+        <div>
+            <h2>
+                <i class="fa fa-tired"></i>
+                @this.texts.GetText("Index_Introduction1")
+            </h2>
+            <p>@this.texts.GetText("Index_IntroductionText1")</p>
+        </div>
+        <div>
+            <h2>
+                <i class="fa fa-lock"></i>
+                @this.texts.GetText("Index_Introduction2")
+            </h2>
+            <p>@this.texts.GetText("Index_IntroductionText2")</p>
+        </div>
+        <div>
+            <h2>
+                <i class="fa fa-dollar-sign"></i>
+                @this.texts.GetText("Index_Introduction3")
+            </h2>
+            <p>@this.texts.GetText("Index_IntroductionText3")</p>
+        </div>
+    </div>
+    <div class="col text-center">
+        <a class="btn btn-default" href="@(url)">
+            @this.texts.GetText("Index_MainButton")
+        </a>
+    </div>
+</div>
